@@ -24,14 +24,14 @@
 module CannyEdge(dAddrRegRow, dAddrRegCol, bWE, bCE, InData, OutData,
 	OPMode, bOPEnable, dReadReg, dWriteReg,	clk, rst_b);
 
-	input 	[2:0]						dAddrRegRow, dAddrRegCol;
-	input									bWE, bCE;
+	input 	[2:0]						dAddrRegRow, dAddrRegCol; // Address register row & column in dex
+	input									bWE, bCE; // Write enable & Chip enable in binary 写使能 & 片选
 	input 	[`DATA_WIDTH-1:0] 	InData;
 	output 	[`DATA_WIDTH-1:0] 	OutData;
 	reg     	[`DATA_WIDTH-1:0] 	OutData;
 
-	input 	[2:0]						OPMode;
-	input 								bOPEnable;
+	input 	[2:0]						OPMode;  // operation code: choose which function 
+	input 								bOPEnable; // operation enable in binary
 	input 	[3:0]						dReadReg, dWriteReg;
 
 	input									clk, rst_b;
